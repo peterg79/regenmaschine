@@ -45,3 +45,7 @@ class Zone:
     async def stop(self, zone_id: int) -> dict:
         """Stop a program."""
         return await self._request("post", f"zone/{zone_id}/stop")
+
+    async def simulate(self, zone_data: dict) -> dict:
+        """Simulates a zone activity (based on advanced zone properties)"""
+        return await self._request("post", "zone/simulate", json=zone_data)
