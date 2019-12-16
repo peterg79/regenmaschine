@@ -52,3 +52,7 @@ class Watering:
     async def unpause_all(self) -> dict:
         """Unpause all paused watering."""
         return await self.pause_all(0)
+
+    async def zone(self) -> dict:
+        """Returns status of watering on all zones"""
+        return await self._request("get", "watering/zone")
